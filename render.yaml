@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: node-api-render
+    env: docker
+    plan: free
+    autoDeploy: false
+    healthCheckPath: /health
+    dockerContext: .
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: API_KEY
+        sync: false
